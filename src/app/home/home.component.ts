@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DoctorService } from '../services/doctor.service';
-
 import { Doctor } from '../../shared/doctor';
 
 import 'rxjs/add/operator/do';
@@ -18,7 +17,7 @@ export class HomeComponent implements OnInit {
 
 	doctors: Doctor[];
   docErrMess: string;
-  selectedDoctor: doctors;
+  selectedDoctor: Doctor;
 
   constructor(private doctorservice: DoctorService,
       @Inject('BaseURL') private BaseURL) { }
@@ -29,9 +28,8 @@ export class HomeComponent implements OnInit {
     }, errmess => this.docErrMess = <any>errmess);
   }
 
-  onSelect(doctor: Doctor){
+  onSelect(doctor: Doctor) {
   	this.selectedDoctor = doctor;
-  	
   }
 
 }

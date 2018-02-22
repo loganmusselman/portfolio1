@@ -8,20 +8,21 @@
 	</div>
 
 	<div fxFlex>
+		<app-doctordetail [doctor]="selectedDoctor"></app-doctordetail>
 		<mat-grid-list cols="2" rowHeight="200px">
-		<mat-grid-tile *ngFor="let doctor of doctors" (click)="onSelect(doctor)">
-		
-			<img height="200px" src="{{ doctor.pic }}" alt="{{ doctor.name }}">
+			<mat-grid-tile *ngFor="let doctor of doctors" (click)="onSelect(doctor)">
 			
-			<mat-grid-tile-footer>
-				<h1 mat-line>{{ doctor.name | uppercase }}</h1>
-			</mat-grid-tile-footer>
-		</mat-grid-tile>
+				<img src="{{ BaseURL + doctor.pic }}" alt="{{ doctor.name }}">
+				
+				<mat-grid-tile-footer>
+					<h1 mat-line>{{ doctor.name | uppercase }} <span style="float: right">{{doctor.abbr}}</span></h1>
+				</mat-grid-tile-footer>
+			</mat-grid-tile>
 		</mat-grid-list>
 	</div>
 
 
-	<app-doctordetail [doctor]="selectedDoctor"></app-doctordetail>
+	
 
 
 </div>

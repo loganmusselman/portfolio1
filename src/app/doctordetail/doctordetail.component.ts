@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Doctor } from '../../shared/doctor';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -26,7 +26,7 @@ export class DoctordetailComponent implements OnInit {
 	@Input()
 	doctor: Doctor;
 
-  constructor() { }
+  constructor(@Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
   }

@@ -1,0 +1,19 @@
+
+<div fxFlex *ngIf="product">
+	<mat-card>		
+			<img mat-card-image src="{{ BaseURL + product
+		.pic }}" alt="{{ product
+		.name }}"/>
+		<mat-card-content row-height="200px">
+			<h3>{{ product
+			.name | uppercase }}</h3>
+			<p>{{ product
+		.description}}</p>
+		<mat-card-actions>
+			<button mat-button> LIKE</button>
+			<button mat-button>SHARE</button>
+		</mat-card-actions>
+		</mat-card-content>
+	</mat-card>
+</div>
+

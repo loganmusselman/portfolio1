@@ -1,0 +1,30 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+	<div fxFlex>
+		<app-productdetail [product]="selectedProduct">
+			</app-productdetail>
+		<div>
+			<h3 style="display: inline-block;">Products</h3>
+			<mat-form-field style="display: inline; float: right;">
+				<mat-select placeholder="Filters"  [(value)]="checked" multiple>
+					<mat-option value="Glasses">Glasses</mat-option>
+					<mat-option value="Gloves">Gloves</mat-option>
+				</mat-select>
+				</mat-form-field>
+				<button mat-button style="display: inline-block; float: right;" (click)="clearFilter(checked)">Remove Filters</button>
+			<button mat-button style="display: inline-block; float: right;" (click)="onFilter(checked)">Apply Filters</button>
+			<hr>
+		</div>
+	</div>
+	<div fxFlex>
+		<mat-grid-list cols="2" rowHeight="200px">
+		<mat-grid-tile *ngFor="let product of products; let index = i" (click)="onSelect(product)">
+			<img src="{{ BaseURL + product.pic }}" alt="{{ product.name }}">			
+			<mat-grid-tile-footer>
+				<h1 mat-line>{{ product.name | uppercase }}</h1>
+				<h1 style="float: right;">${{ product.cost }}</h1>
+			</mat-grid-tile-footer>
+
+		</mat-grid-tile>
+		</mat-grid-list>
+	</div>
+</div>

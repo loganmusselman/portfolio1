@@ -1,3 +1,20 @@
-<p>
-  contact works!
-</p>
+<div fxFlex>
+	<mat-form-field>
+		<input matInput placeholder="First Name">
+	</mat-form-field><br>
+	<mat-form-field>
+		<input matInput placeholder="Last Name">
+	</mat-form-field><br>
+	<mat-form-field>
+		<mat-select placeholder="Insurance Carrier">
+			<mat-option value="Blue Cross Blue Shield">Blue Cross Blue Shield</mat-option>
+			<mat-option value="Premera">Premera</mat-option>
+			<mat-option value="Aetna">Aetna</mat-option>
+			<mat-option value="Humana">Humana</mat-option>
+		</mat-select>
+	</mat-form-field><br>
+	<mat-form-field>
+		<textarea matInput placeholder="What seems to be the problem?"></textarea>
+	</mat-form-field><br>
+	<button mat-button type="submit">Submit</button>
+</div>

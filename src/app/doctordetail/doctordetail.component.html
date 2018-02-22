@@ -1,14 +1,10 @@
 <div fxFlex *ngIf="doctor" [@doctorState]="doctor.state">
-	<mat-card>
-		<mat-card-header>
-			<mat-card-title>
-				<h3>{{ doctor.name | uppercase }}</h3>
-			</mat-card-title>
-		</mat-card-header>
-		
+	<mat-card>		
 		<mat-card-content>
-			<img mat-card-image src="{{ doctor.pic }}" alt="{{ doctor.name }}"/>
-			<p>{{ doctor.description}}</p>
+			<img mat-card-image src="{{ BaseURL + doctor.pic }}" alt="{{ doctor.name }}"/>
+			<h1> {{doctor.name}}</h1>
+			
+			<p class="mat-line">{{ doctor.description}}</p>
 		</mat-card-content>
 		<mat-card-actions>
 			<button mat-button> LIKE</button>

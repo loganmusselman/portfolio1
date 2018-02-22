@@ -13,11 +13,13 @@ body {
 	display: flex;
 }
 
-mat-card {
+.mat-card {
     word-wrap: break-word;
     white-space: pre-wrap;
     margin: 1em;
     display: block;
+    position: relative;
+
 }
 
 .sidenav-container {
