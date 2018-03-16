@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
 import { Product } from '../../shared/product';
 import { FormControl } from '@angular/forms';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ProductdetailComponent } from '../productdetail/productdetail.component';
 
 
@@ -39,19 +39,20 @@ export class ProductsComponent implements OnInit {
 
   
 
-  onSelect(product: Product) {
+  onSelect(product) {
 
-    this.selectedProduct = product;
+    this.product = product;
 
-    /*
+    console.log(this.product);
+    
     let dialogRef = this.dialog.open(ProductdetailComponent, {
-      width: '500px',
-      
+      height: "1000px", width: "1000px",
+      data: { product: this.product }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed' + product);
+      console.log('Dialog closed' + this.product);
     });
-    */
+    
   }
 
   onFilter(checked){
@@ -65,8 +66,14 @@ export class ProductsComponent implements OnInit {
     if(checked){
       checked = null;
       this.selectedProduct = null;
+      this.productservice.getProducts().subscribe((products) => {
+        this.products = products;
+        this.selectedProduct = null;
+      }, errmess => this.proErrMess = <any>errmess);
+      console.log("filter cleared");
     } else {
       return null;
+      console.log("did nothing");
     }
   }
 

@@ -11,12 +11,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 
 
 //Import hammerjs 
@@ -82,7 +82,8 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
   providers: [
   DoctorService,
   ProductService,
-  {provide: 'BaseURL', useValue: baseURL}
+  {provide: 'BaseURL', useValue: baseURL},
+  {provide: MatDialogRef, useValue: {}}
   ],
   bootstrap: [AppComponent]
   

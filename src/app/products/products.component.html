@@ -1,8 +1,8 @@
 <div class="container" fxLayout="column" fxLayoutGap="10px">
-	<div fxFlex>
-		<app-productdetail [product]="selectedProduct">
-			</app-productdetail>
-		<div>
+	<div>
+		
+		
+		<div fxFlex>
 			<h3 style="display: inline-block;">Products</h3>
 			<mat-form-field style="display: inline; float: right;">
 				<mat-select placeholder="Filters"  [(value)]="checked" multiple>
@@ -15,7 +15,7 @@
 			<hr>
 		</div>
 	</div>
-	<div fxFlex>
+	<div>
 		<mat-grid-list cols="2" rowHeight="200px">
 		<mat-grid-tile *ngFor="let product of products; let index = i" (click)="onSelect(product)">
 			<img src="{{ BaseURL + product.pic }}" alt="{{ product.name }}">			
